@@ -1,3 +1,2 @@
-# Task 3
-
-# Put your code here
+a, b = ARGV.map(&:to_i)
+puts a.gcd(b)
