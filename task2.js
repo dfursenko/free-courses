@@ -4,7 +4,9 @@ months = ['января','февраля','марта','апреля','мая','
 var d = +process.argv[2];
 var m =  process.argv[3];
 var y = +process.argv[4];
-var new_year = new Date("Dec 31 " + y);
+var new_year = new Date("January 1 " + (y + 1) );
 var input_day = new Date( (months.indexOf(m) + 1) + "/" + d + "/" + y);
-var remaining = (new_year - input_day) / (24*60*60*1000);
+var next_day = new Date(input_day);
+    next_day.setDate(input_day.getDate() + 1);
+var remaining = (new_year - next_day) / (24*60*60*1000);
 console.log(remaining);
